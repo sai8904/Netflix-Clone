@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Netflix</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scrollbar-width: none;
+        }
+
+        body {
+            background-color: black;
+        }
+
+        .section-1 {
+            background-image: url(bgn.jpg);
+            background-size: cover;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        .section-1::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            z-index: 0;
+            opacity: 0.5;
+        }
+
+        .section-1::after {
+            position: absolute;
+            bottom: 0;
+            height: 60px;
+            width: 100%;
+            background-color: black;
+            border-top: 10px solid red;
+            border-radius: 50% 50% 0 0;
+            box-shadow: inset 0 10px 10px rgba(0, 0, 255, 0.573);
+            content: '';
+        }
+
+        .box {
+            width: 800px;
+            height: 400px;
+            /* background: white; */
+        }
+
+        .head1 {
+            font-size: 60px;
+            font-weight: 800;
+            color: white;
+            text-shadow: 0 0 30px black;
+            position: relative;
+            z-index: 10;
+        }
+
+        .head2 {
+            font-size: 60px;
+            font-weight: 800;
+            color: white;
+            text-shadow: 0 0 30px black;
+            position: relative;
+            z-index: 10;
+        }
+
+        .head3 {
+            font-size: 60px;
+            font-weight: 800;
+            color: white;
+            text-shadow: 0 0 30px black;
+            position: relative;
+            z-index: 10;
+        }
+
+        .subscriprion {
+            font-size: 20px;
+            color: white;
+            text-shadow: 0 0 30px black;
+            position: relative;
+            z-index: 10;
+        }
+
+        .under {
+            width: 100%;
+        }
+
+        .input-field {
+            width: 55%;
+            position: relative;
+            z-index: 10;
+        }
+
+        .getstarted {
+            width: 25%;
+            padding: 10px;
+            font-size: 25px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .field {
+            background-color: transparent;
+        }
+
+        .right-arr {
+            width: 20px;
+            margin-bottom: 2px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .logo {
+            width: 200px;
+            position: absolute;
+            left: 90px;
+            top: 10px;
+        }
+
+        .right {
+            position: absolute;
+            top: 30px;
+            right: 100px;
+        }
+
+        .section-2 {
+            background-color: black;
+            width: 100vw;
+        }
+
+        .tff {
+            margin-left: 10vw;
+        }
+
+        .cards {
+            max-width: 80%;
+            overflow: scroll;
+            margin: auto;
+            padding: 10px;
+        }
+
+        .box {
+            position: relative;
+
+        }
+
+        .box1 {
+            cursor: pointer;
+        }
+
+        .box1::after {
+            content: '1';
+            font-size: 120px;
+            font-weight: 700;
+            color: black;
+            position: absolute;
+            left: -18px;
+            top: 140px;
+            -webkit-text-stroke: 2px white;
+            transition: all 0.5s ease;
+
+        }
+
+        .box1:hover {
+            scale: 1.10;
+        }
+
+        .box2 {
+            cursor: pointer;
+        }
+
+        .box2::after {
+            content: '2';
+            font-size: 120px;
+            font-weight: 700;
+            color: black;
+            position: absolute;
+            left: -18px;
+            top: 140px;
+            -webkit-text-stroke: 2px white;
+            transition: all 0.5s ease;
+        }
+
+        .box2:hover {
+            scale: 1.10;
+        }
+
+        .box3 {
+            cursor: pointer;
+        }
+
+        .box3::after {
+            content: '3';
+            font-size: 120px;
+            font-weight: 700;
+            color: black;
+            position: absolute;
+            left: -18px;
+            top: 140px;
+            -webkit-text-stroke: 2px white;
+            transition: all 0.5s ease;
+        }
+
+        .box3:hover {
+            scale: 1.10;
+        }
+
+        .box4 {
+            cursor: pointer;
+        }
+
+        .box4::after {
+            content: '4';
+            font-size: 120px;
+            font-weight: 700;
+            color: black;
+            position: absolute;
+            left: -18px;
+            top: 140px;
+            -webkit-text-stroke: 2px white;
+            transition: all 0.5s ease;
+        }
+
+        .box4:hover {
+            scale: 1.10;
+        }
+
+        .box5 {
+            cursor: pointer;
+        }
+
+        .box5::after {
+            content: '5';
+            font-size: 120px;
+            font-weight: 700;
+            color: black;
+            position: absolute;
+            left: -18px;
+            top: 140px;
+            -webkit-text-stroke: 2px white;
+            transition: all 0.5s ease;
+        }
+
+        .box5:hover {
+            scale: 1.10;
+        }
+
+        .box6 {
+            cursor: pointer;
+        }
+
+        .box6::after {
+            content: '6';
+            font-size: 120px;
+            font-weight: 700;
+            color: black;
+            position: absolute;
+            left: -18px;
+            top: 140px;
+            -webkit-text-stroke: 2px white;
+            transition: all 0.5s ease;
+        }
+
+        .box6:hover {
+            scale: 1.10;
+        }
+
+        .box7 {
+            cursor: pointer;
+        }
+
+        .box7::after {
+            content: '7';
+            font-size: 120px;
+            font-weight: 700;
+            color: black;
+            position: absolute;
+            left: -18px;
+            top: 140px;
+            -webkit-text-stroke: 2px white;
+            transition: all 0.5s ease;
+        }
+
+        .box7:hover {
+            scale: 1.10;
+        }
+
+        .box8 {
+            cursor: pointer;
+        }
+
+        .box8::after {
+            content: '8';
+            font-size: 120px;
+            font-weight: 700;
+            color: black;
+            position: absolute;
+            left: -18px;
+            top: 140px;
+            -webkit-text-stroke: 2px white;
+            transition: all 0.5s ease;
+        }
+
+        .box8:hover {
+            scale: 1.10;
+        }
+
+        .box9 {
+            cursor: pointer;
+        }
+
+        .box9::after {
+            content: '9';
+            font-size: 120px;
+            font-weight: 700;
+            color: black;
+            position: absolute;
+            left: -18px;
+            top: 140px;
+            -webkit-text-stroke: 2px white;
+            transition: all 0.5s ease;
+        }
+
+        .box9:hover {
+            scale: 1.10;
+        }
+
+        .box10 {
+            cursor: pointer;
+        }
+
+        .box10::after {
+            content: '10';
+            font-size: 120px;
+            font-weight: 700;
+            color: black;
+            position: absolute;
+            left: -18px;
+            top: 140px;
+            -webkit-text-stroke: 2px white;
+            transition: all 0.5s ease;
+        }
+
+        .box10:hover {
+            scale: 1.10;
+        }
+
+        .helpcard {
+            width: 80%;
+            margin: auto;
+        }
+
+        .acc {
+            width: 75%;
+            margin: auto;
+        }
+
+        .ac {
+            width: 100%;
+            border-radius: 2px;
+            background-color: rgb(128, 128, 128);
+        }
+        .heading{
+            color: white;
+
+        }
+        .und{
+            width: 80%;
+            margin: auto;
+        }
+        .if{
+            width: 50%;
+        }
+        .section3{
+            width: 100vw;
+            background-color: black;
+        }
+        .footer {
+            max-width: 1000px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+        .footer a {
+            color: grey;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+        }
+        .footer .language {
+            margin-top: 20px;
+        }
+        .footer .language select {
+            background: black;
+            color: white;
+            border: 1px solid rgb(153, 149, 149);
+            padding: 5px;
+        }
+        .ac:hover{
+            cursor: pointer;
+            background-color: rgba(131, 119, 119, 0.807);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- section-1 -->
+    <div class="container-fluid section-1 d-flex align-items-center justify-content-center">
+        <div class="box d-flex flex-column align-items-center justify-content-center">
+            <h1 class="head1">Unlimited movies, </h1>
+            <h1 class="head2">TV shows and </h1>
+            <h1 class="head3">more</h1>
+            <p class="subscriprion">Starts at ₹149. Cancel at any time.</p>
+            <p class="ready text-light" style="text-shadow: 0 0 50px black;position: relative;
+            z-index: 10;">Ready to watch? Enter your email to create or restart your membership.</p>
+            <div class="under d-flex align-items-center justify-content-center gap-2">
+                <div class="form-floating mb-3 input-field">
+                    <input type="email" class="form-control field bg-transparent" id="floatingInput"
+                        placeholder="name@example.com">
+                    <label for="floatingInput" class="text-light tf bg-tansparent">Email address</label>
+                </div>
+                <button type="button" class="btn btn-danger getstarted mb-3">Get Started <img src="right-arrow.png"
+                        class="right-arr" alt=""></button>
+            </div>
+        </div>
+    </div>
+
+
+    <img src="Netflix-logo.png" class="logo" alt="">
+
+    <div class="right d-flex gap-2">
+        <div class="dropdown d-flex ">
+            <button class="btn btn-transparent btn btn-outline-light dropdown-toggle" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="translate.svg" alt=""> English
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">English</a></li>
+                <li><a class="dropdown-item" href="#">Hindi</a></li>
+            </ul>
+        </div>
+        <button type="button" class="btn btn-danger p-2">Sign In</button>
+    </div>
+
+    <!-- section-2 -->
+    <div class="container-fluid section-2">
+        <h1 class="px-5 text-light fs-4 tff">Trending Now</h1>
+        <div class="cards d-flex gap-4 mt-4 ">
+            <div class="box box1 mx-4">
+                <img src="pushpa.jpg" style="border-radius: 10px;" alt="">
+            </div>
+            <div class="box box2 mx-4">
+                <img src="daaku.jpg" style="border-radius: 10px;" alt="">
+
+            </div>
+            <div class="box box3 mx-4">
+                <img src="squid'.jpg" style="border-radius: 10px;" alt="">
+            </div>
+            <div class="box box4 mx-4">
+                <img src="dhoomdhaam.jpg" style="border-radius: 10px;" alt="">
+
+            </div>
+            <div class="box box5 mx-4">
+                <img src="lucky5.jpg" style="border-radius: 10px;" alt="">
+            </div>
+            <div class="box box6 mx-4">
+                <img src="6.jpg" style="border-radius: 10px;" alt="">
+            </div>
+            <div class="box box7 mx-4">
+                <img src="7.jpg" style="border-radius: 10px;" alt="">
+            </div>
+            <div class="box box8 mx-4">
+                <img src="bb7.jpg" style="border-radius: 10px;" alt="">
+            </div>
+            <div class="box box9 mx-4">
+                <img src="venom8.jpg" style="border-radius: 10px;" alt="">
+            </div>
+            <div class="box box10 mx-4">
+                <img src="10.jpg" style="border-radius: 10px;" alt="">
+            </div>
+        </div>
+        <h1 class="px-5 text-light fs-4 tff">More reasons to join</h1>
+        <div class="helpcard d-flex flex-row gap-4 align-items-center justify-content-center my-5 flex-wrap flex-sm-column flex-lg-row flex-row">
+            <div class="c c1">
+                <img src="tf1.png" style="border-radius: 10px;width: 262px" alt="">
+            </div>
+            <div class="c c1">
+                <img src="tf2.png" style="border-radius: 10px;width: 262px" alt="">
+            </div>
+            <div class="c c1">
+                <img src="tf3.png" style="border-radius: 10px;width: 262px" alt="">
+            </div>
+            <div class="c c1">
+                <img src="tf4.png" style="border-radius: 10px;width: 262px" alt="">
+            </div>
+        </div>
+        <h1 class="px-5 text-light fs-4 tff">Frequently Asked Questions</h1>
+        <div class="acc mt-5">
+            <div class="ac1 ac d-flex mt-3 justify-content-between align-items-center p-3">
+                <h1 class="heading mx-2 fs-4 fw-normal">What is Netflix ?</h1><i class="fa-solid fa-plus text-light mx-3"></i>
+            </div>
+            <div class="ac2 ac d-flex mt-3 justify-content-between align-items-center p-3">
+                <h1 class="heading mx-2 fs-4 fw-normal">How much does Netflix cost ?</h1><i class="fa-solid fa-plus text-light mx-3"></i>
+            </div>
+            <div class="ac3 ac d-flex mt-3 justify-content-between align-items-center p-3">
+                <h1 class="heading mx-2 fs-4 fw-normal">Where can I watch ?</h1><i class="fa-solid fa-plus text-light mx-3"></i>
+            </div>
+            <div class="ac4 ac d-flex mt-3 justify-content-between align-items-center p-3">
+                <h1 class="heading mx-2 fs-4 fw-normal">How can I cancel ?</h1><i class="fa-solid fa-plus text-light mx-3"></i>
+            </div>
+            <div class="ac5 ac d-flex mt-3 justify-content-between align-items-center p-3">
+                <h1 class="heading mx-2 fs-4 fw-normal">What can I watch on Netflix ?</h1><i class="fa-solid fa-plus text-light mx-3"></i>
+            </div>
+            <div class="ac6 ac d-flex mt-3 justify-content-between align-items-center p-3">
+                <h1 class="heading mx-2 fs-4 fw-normal">Is Netflix good for kids ?</h1><i class="fa-solid fa-plus text-light mx-3"></i>
+            </div>
+
+        </div>
+        <h1 class="px-5 text-light fs-6 text-center fw-normal mt-5">Ready to watch? Enter your email to create or restart your membership.</h1>
+        <div class="und d-flex align-items-center justify-content-center gap-2">
+            <div class="form-floating mb-3 if">
+                <input type="email" class="form-control field bg-transparent" id="floatingInput"
+                    placeholder="name@example.com">
+                <label for="floatingInput" class="text-light tf bg-tansparent">Email address</label>
+            </div>
+            <button type="button" class="btn btn-danger p-3 mb-3">Get Started <img src="right-arrow.png"
+                    class="right-arr" alt=""></button>
+        </div>
+    </div>
+    <!-- section3 -->
+     <div class="section-3 container-fluid">
+        <footer class="footer">
+            <p>Questions? Call <a href="tel:000-800-919-1743">000-800-919-1743</a></p>
+            <div class="footer-grid">
+                <div>
+                    <a href="#">FAQ</a><br>
+                    <a href="#">Investor Relations</a><br>
+                    <a href="#">Privacy</a><br>
+                    <a href="#">Speed Test</a>
+                </div>
+                <div>
+                    <a href="#">Help Centre</a><br>
+                    <a href="#">Jobs</a><br>
+                    <a href="#">Cookie Preferences</a><br>
+                    <a href="#">Legal Notices</a>
+                </div>
+                <div>
+                    <a href="#">Account</a><br>
+                    <a href="#">Ways to Watch</a><br>
+                    <a href="#">Corporate Information</a><br>
+                    <a href="#">Only on Netflix</a>
+                </div>
+                <div>
+                    <a href="#">Media Centre</a><br>
+                    <a href="#">Terms of Use</a><br>
+                    <a href="#">Contact Us</a>
+                </div>
+            </div>
+            <div class="language">
+                <select>
+                    <option> <img src="translate.svg" alt="">English</option>
+                    <option>हिन्दी</option>
+                </select>
+            </div>
+            <p>Netflix India</p>
+        </footer>
+     </div>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
