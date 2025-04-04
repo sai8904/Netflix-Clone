@@ -1,11 +1,11 @@
-# Google Clone 🌐  
+# Netflix Clone 🌐  
 
-A simple **Google Search Clone** built using **HTML** and **CSS**. This project replicates the front-end design of Google's homepage with a clean and responsive layout.  
+A simple **Netflix Clone** built using **HTML** and **CSS**. This project replicates the front-end design of Google's homepage with a clean and responsive layout.  
 
 🔗 **Live Demo:** [View Project](https://saikiran-net-clone.netlify.app/)  
 
 ## 🚀 Features  
-✅ Google-like homepage UI  
+✅ Netflix homepage UI  
 ✅ Fully responsive design  
 ✅ Smooth hover effects  
 ✅ Clean and minimalistic layout  
